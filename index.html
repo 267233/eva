@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyCHAT</title>
+
+    <Style>
+     .avatar{
+      width:60px ;
+      border-radius: 30%;
+
+     }
+     .ms1{
+      
+       background-color: green;
+       color: white;
+       padding: 13px;
+       border-radius: 25px;
+      border-bottom-left-radius:0px ;
+       display: inline-block;
+       margin-left: 8px;
+     }
+     .usuario1{
+      display:flex;
+     } 
+     .usuario2{
+
+        display:flex;
+        margin-left: 30%;
+
+
+     }
+     .ms2{
+        background-color:purple;
+       color: white;
+       padding: 13px;
+       border-radius: 25px;
+       border-bottom-left-radius:0px ;
+       display: inline-block;
+       margin-left: 8px;
+
+     }
+    </Style>
+
+
+</head>
+
+<body>
+<!--mensaje usuario uno-->
+
+
+
+
+       <div id="contenedor">
+
+         
+       </div>
+         <div style="display: flex;">
+            <div>
+                <input type="text" id="mensaje1">
+                <button onclick="msmUsuario1()"> Enviar mensaje</button>
+               </div>
+        
+               <div> 
+                <input type="text" id="mensaje2">
+                <button onclick="msmUsuario2()"> Enviar mensaje</button>
+               
+               </div>
+         </div>
+     
+      
+    <script>
+      
+      var caja=document.getElementById('contenedor')
+      
+      caja.innerHTML=``
+      console.log(caja.outerHTML)
+      
+      
+       function msmUsuario1(){
+
+        var contenidoActual=caja.outerHTML
+        var texto=document.getElementById('mensaje1').value
+       
+        caja.innerHTML=`${contenidoActual}<div class="usuario1">
+<div> 
+ <img class="avatar" src="https://thumbs.dreamstime.com/b/cara-linda-del-monstruo-avatar-cuadrado-114650081.jpg" alt="">
+
+</div>
+
+
+<div class="ms1">
+
+
+    <spam> ${texto}</spam> <br>
+    <spam> 09:25 </spam>
+
+</div>
+
+</div>
+</div>`
+  document.getElementById('mensaje1').value=''
+
+      }
+
+
+      function msmUsuario2(){
+        var contenidoActual=caja.outerHTML
+        var texto=document.getElementById('mensaje2').value
+        caja.innerHTML=`${contenidoActual}<div class="usuario2">
+
+<div>
+
+    <img class="avatar" src="https://us.123rf.com/450wm/drawkman/drawkman1709/drawkman170900323/85464659-cara-de-dibujos-animados-dr%C3%A1cula-lindo-avatar-cuadrado-o-icono-ilustraci%C3%B3n-de-halloween-tarjeta.jpg" alt="">
+
+
+</div>
+ <div class="ms2"> 
+
+    <spam> ${texto}</spam> <br>
+    <spam> 09:25 </spam>
+
+ </div>
+
+</div>` 
+document.getElementById('mensaje2').value=''
+}
+
+
+    </script>
+
+
+
+
+</body>
+</html>
